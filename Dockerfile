@@ -18,4 +18,4 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Run your script when the container launches
-CMD ["python", "your_script.py"]
+CMD ["python", "helldiversstuff.py"]
