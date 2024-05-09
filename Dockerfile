@@ -1,21 +1,17 @@
 # Use an official Python runtime as a parent image
-FROM python:3.8-slim
+FROM python:3.9-slim
 
-# Set the working directory in the container
+# Set the working directory in the container to /app
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY..
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir requests psycopg2-binary python-dotenv
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
 
-# Define environment variable
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-# Run your script when the container launches
-CMD ["python", "helldiversstuff.py"]
+# Run get_data.py when the container launches
+CMD ["python", "./get_data.py"]
